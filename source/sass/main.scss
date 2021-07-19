@@ -83,6 +83,48 @@ div {
 
         letter-spacing: 5px;
 
+        border-radius: 8px;
+        border: 1px solid whitesmoke;
+        outline: none;
+
+        overflow: hidden;
+        cursor: pointer;
+
+        position: relative;
+
+        & span {
+
+            position: relative;
+            pointer-events: none;
+
+        }
+
     }
+
+}
+
+// effet pour js 
+
+#button::before {
+
+    --size: 0;
+    content: '';
+
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+
+    background: radial-gradient(circle closest-side, rgb(255, 219, 59), transparent);
+
+    width: var(--size);
+    height: var(--size);
+    transform: translate(-50%, -50%);
+    transition: .1s ease;
+
+}
+
+#button:hover::before {
+
+    --size: 600px;
 
 }

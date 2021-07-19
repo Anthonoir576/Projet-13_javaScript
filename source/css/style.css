@@ -52,6 +52,33 @@ div button {
   color: whitesmoke;
   background: #ff5242;
   letter-spacing: 5px;
+  border-radius: 8px;
+  border: 1px solid whitesmoke;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+div button span {
+  position: relative;
+  pointer-events: none;
+}
+
+#button::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  background: radial-gradient(circle closest-side, #ffdb3b, transparent);
+  width: var(--size);
+  height: var(--size);
+  transform: translate(-50%, -50%);
+  transition: 0.1s ease;
+}
+
+#button:hover::before {
+  --size: 600px;
 }
 
 /*# sourceMappingURL=style.css.map */
